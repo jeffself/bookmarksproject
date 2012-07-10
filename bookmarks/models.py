@@ -16,6 +16,7 @@ class Category(models.Model):
 
 
 class Link(models.Model):
+    title = models.CharField(max_length=100, default='Title')
     url = models.CharField(max_length=255, unique=True)
     rating = models.IntegerField(default=1)
     category = models.ForeignKey('Category')

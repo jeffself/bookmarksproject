@@ -6,8 +6,8 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name", )}
 
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ('url', 'category','rating','description')
-    search_fields = ('description',)
+    list_display = ('title','url', 'category','rating','description')
+    search_fields = ('title','description',)
     list_filter = ('category',)
 
 admin.site.register(Category, CategoryAdmin)
