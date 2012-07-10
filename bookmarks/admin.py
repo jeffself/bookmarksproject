@@ -7,6 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class LinkAdmin(admin.ModelAdmin):
     list_display = ('title','url', 'category','rating','description')
+    prepopulated_fields = {"slug":("title",)}
     search_fields = ('title','description',)
     list_filter = ('category',)
 
