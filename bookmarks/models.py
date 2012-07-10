@@ -23,6 +23,7 @@ class Link(models.Model):
     category = models.ForeignKey('Category')
     description = models.TextField(null=True,blank=True)
     tags = TaggableManager()
+    submitted_by = models.CharField(max_length=100, default='')
 
     def __unicode__(self):
         return self.url
